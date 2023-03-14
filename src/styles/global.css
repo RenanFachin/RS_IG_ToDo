@@ -1,5 +1,6 @@
 :root {
   --white: #FFFFFF;
+  --black: #000000;
 
   --purple-500: #8284FA;
   --purple-800: #5E60CE;
@@ -22,6 +23,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+input:focus {
+	outline: transparent;
+	box-shadow: 0 0 0 1px var(--purple-500)
+}
+
+button:focus {
+	outline: transparent;
 }
 
 body {
