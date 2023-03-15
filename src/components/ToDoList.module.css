@@ -1,0 +1,75 @@
+.card {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  gap: 0.75rem;
+
+  background: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  border-radius: 8px;
+
+  font-size: 0.875rem;  
+}
+
+.card .taskCompleted,
+.card .notFinished {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  border-radius: 9999px;
+
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.card .taskCompleted {
+  background: var(--purple-800);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;  
+}
+
+.card .taskCompleted:hover {
+  background: var(--purple-500);
+}
+
+.card .taskCompleted svg {
+  color: var(--gray-100);
+}
+
+.card .notFinished {  
+  border: 2px solid var(--blue-500);
+  background: transparent;
+}
+
+.card .notFinished:hover {
+  background: var(--blue-800);
+  opacity: 0.2;
+}
+
+.taskText{
+  color: var(--gray-100);
+  font-size: 0.875rem;
+}
+
+.taskTextCompleted {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.deleteItem {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--gray-300);
+  line-height: 0;
+  transition: color 0.2s;
+}
+
+.deleteItem:hover {
+  color: var(--red-500);
+}

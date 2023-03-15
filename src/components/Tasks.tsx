@@ -1,6 +1,7 @@
 import { ClipboardText } from 'phosphor-react'
 
 import styles from './Tasks.module.css'
+import { ToDoList } from './ToDoList'
 
 export function Tasks() {
   return (
@@ -19,12 +20,21 @@ export function Tasks() {
 
 
       <section className={styles.tasks}>
-        <div className={styles.placeholder}>
+        {/* <div className={styles.placeholder}>
           <ClipboardText size={56}/>
 
           <strong>Você ainda não tem tarefas cadastradas</strong>
           <p>Crie tarefas e organize seus itens a fazer</p>
+
+
+        </div> */}
+
+        <div className={styles.toDoList}>
+          <ToDoList />
+          <ToDoList />
+          <ToDoList />
         </div>
+
       </section>
     </div>
   )

@@ -25,14 +25,14 @@
   box-sizing: border-box;
 }
 
-input:focus {
+:focus {
 	outline: transparent;
 	box-shadow: 0 0 0 1px var(--purple-500)
 }
 
-button:focus {
+/* button:focus {
 	outline: transparent;
-}
+} */
 
 body {
   background: var(--gray-600);

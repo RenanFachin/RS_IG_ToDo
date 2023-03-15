@@ -67,7 +67,6 @@
 
 .placeholder svg {
   color: var(--gray-400);
-  margin-bottom: 1rem;
 }
 
 .placeholder strong {
@@ -76,4 +75,10 @@
 
 .placeholder p {
   color: var(--gray-300);
+}
+
+.toDoList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
