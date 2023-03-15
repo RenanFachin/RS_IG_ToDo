@@ -4,6 +4,7 @@ import { ToDoListCard } from './ToDoListCard'
 // ICONS
 import { ClipboardText } from 'phosphor-react'
 
+// INTERFACE
 import { TaskProps } from './Form'
 
 // CSS
@@ -19,7 +20,6 @@ interface Props {
 export function Tasks({ tasks, onSelect, onDelete }: Props) {
 
   const tasksCount = tasks.length;
-
   const doneTasksCount = tasks.filter(
     (task: TaskProps) => task.isCompleted === true
   ).length;
@@ -84,9 +84,6 @@ export function Tasks({ tasks, onSelect, onDelete }: Props) {
               </div>
             )
         }
-
-
-
       </section>
     </div>
   )

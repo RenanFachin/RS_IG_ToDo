@@ -4,6 +4,8 @@ import { FormEvent, useState } from 'react'
 
 // CSS
 import styles from './Form.module.css'
+
+// COMPONENTS
 import { Tasks } from './Tasks'
 
 export interface TaskProps {
@@ -43,7 +45,7 @@ export function Form() {
       id: Math.random() * 20,
       isCompleted: false
     }
-
+     
     setTasks([...tasks, newTask])
 
     setTaskText('')
