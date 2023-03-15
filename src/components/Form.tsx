@@ -1,6 +1,6 @@
 // ICONS
 import { PlusCircle } from 'phosphor-react'
-import { FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 
 // CSS
 import styles from './Form.module.css'
@@ -37,6 +37,8 @@ export function Form() {
     setTasks(newTasksArray);
   }
 
+
+
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault()
 
@@ -57,6 +59,7 @@ export function Form() {
     setTasks(newTaskArray)
   }
 
+
   return (
     <>
       <form className={styles.formContent} onSubmit={handleCreateNewTask}>
@@ -64,6 +67,8 @@ export function Form() {
           placeholder='Adiciona uma nova tarefa'
           value={taskText}
           onChange={e => setTaskText(e.target.value)}
+          required
+
         />
 
         <button type='submit'>
