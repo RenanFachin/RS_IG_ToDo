@@ -13,21 +13,11 @@ export interface TaskProps {
 }
 
 const allTasks: TaskProps[] = [
-  {
-    id: 1,
-    content: 'teste',
-    isCompleted: false
-  },
-  {
-    id: 2,
-    content: 'teste',
-    isCompleted: true
-  },
-  {
-    id: 3,
-    content: 'teste',
-    isCompleted: false
-  },
+  // {
+  //   id: 1,
+  //   content: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+  //   isCompleted: false
+  // },
 ]
 
 export function Form() {
@@ -45,10 +35,10 @@ export function Form() {
     setTasks(newTasksArray);
   }
 
-  function handleCreateNewTask(event: FormEvent){
+  function handleCreateNewTask(event: FormEvent) {
     event.preventDefault()
 
-    const newTask ={
+    const newTask = {
       content: taskText,
       id: Math.random() * 20,
       isCompleted: false
@@ -57,6 +47,12 @@ export function Form() {
     setTasks([...tasks, newTask])
 
     setTaskText('')
+  }
+
+  function deleteTask(taskId: number) {
+    const newTaskArray = tasks.filter((task: TaskProps) => task.id !== taskId)
+
+    setTasks(newTaskArray)
   }
 
   return (
@@ -76,6 +72,7 @@ export function Form() {
       </form>
 
       <Tasks
+        onDelete={deleteTask}
         onSelect={selectTask}
         tasks={tasks}
       />

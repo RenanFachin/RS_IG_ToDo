@@ -10,12 +10,17 @@ interface toDoListCardProps {
   taskId: number;
   isFinished: boolean;
   onSelect: (taskId: number) => void;
+  onDelete: (taskId: number) => void;
 }
 
-export function ToDoListCard({ content, isFinished, onSelect, taskId }: toDoListCardProps) {
+export function ToDoListCard({ content, isFinished, onSelect, onDelete ,taskId }: toDoListCardProps) {
   
   function handleToggleTask() {
     onSelect(taskId)
+  }
+
+  function handleDeleteTask(){
+    onDelete(taskId)
   }
 
   return (
@@ -32,7 +37,7 @@ export function ToDoListCard({ content, isFinished, onSelect, taskId }: toDoList
         {content}
       </p>
 
-      <button className={styles.deleteItem}>
+      <button className={styles.deleteItem} onClick={handleDeleteTask}>
         <Trash size={24} />
       </button>
 

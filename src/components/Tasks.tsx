@@ -12,13 +12,24 @@ import styles from './Tasks.module.css'
 interface Props {
   tasks: TaskProps[];
   onSelect: (taskId: number) => void;
+  onDelete: (taskId: number) => void;
 }
 
 
-export function Tasks({ tasks, onSelect }: Props) {
-  
+export function Tasks({ tasks, onSelect, onDelete }: Props) {
+
+  const tasksCount = tasks.length;
+
+  const doneTasksCount = tasks.filter(
+    (task: TaskProps) => task.isCompleted === true
+  ).length;
+
   function onSelectTaskProps(taskId: number) {
     onSelect(taskId);
+  }
+
+  function onDeleteTaskProps(taskId: number) {
+    onDelete(taskId);
   }
 
   return (
@@ -27,12 +38,12 @@ export function Tasks({ tasks, onSelect }: Props) {
       <section className={styles.content}>
         <div className={styles.summary}>
           <strong>Tarefas criadas</strong>
-          <span>0</span>
+          <span>{tasksCount}</span>
         </div>
 
         <div className={styles.completed}>
           <strong>Conclúidas</strong>
-          <span>0</span>
+          <span>{doneTasksCount} de {tasksCount}</span>
         </div>
       </section>
 
@@ -64,6 +75,7 @@ export function Tasks({ tasks, onSelect }: Props) {
                         content={task.content}
                         isFinished={task.isCompleted}
                         onSelect={onSelectTaskProps}
+                        onDelete={onDeleteTaskProps}
                       />
                     )
                   })
