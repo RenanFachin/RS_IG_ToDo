@@ -1,11 +1,7 @@
 .formContent {
-  max-width: 46rem;
-
   display: flex;
   justify-content: center;
-
-  margin: 0 auto;
-
+  
   gap: 0.5rem;
 
   margin-top: calc(0px - 1.5rem - 4px);
@@ -40,6 +36,8 @@
 
   border: 0;
   border-radius: 8px;
+
+  cursor: pointer;
 
   transition: background-color 0.2s;
 }

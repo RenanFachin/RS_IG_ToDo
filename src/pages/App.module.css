@@ -1,5 +1,10 @@
-.wrapper {
+.pageWrapper {
   max-width: 90rem;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.limits {
+  max-width: 46rem;
+  margin: 0 auto;
 }

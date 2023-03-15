@@ -1,11 +1,12 @@
 import { ClipboardText } from 'phosphor-react'
 
 import styles from './Tasks.module.css'
-import { ToDoList } from './ToDoList'
+import { ToDoListCard } from './ToDoListCard'
 
 export function Tasks() {
   return (
     <div className={styles.page_wrapper}>
+      
       <section className={styles.content}>
         <div className={styles.summary}>
           <strong>Tarefas criadas</strong>
@@ -30,9 +31,15 @@ export function Tasks() {
         </div> */}
 
         <div className={styles.toDoList}>
-          <ToDoList />
-          <ToDoList />
-          <ToDoList />
+          <ToDoListCard />
+          <ToDoListCard />
+          <ToDoListCard />
+          <ToDoListCard />
+          <ToDoListCard />
+          <ToDoListCard />
+          <ToDoListCard />
+          <ToDoListCard />
+          <ToDoListCard />
         </div>
 
       </section>

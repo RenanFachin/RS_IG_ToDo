@@ -9,12 +9,14 @@ export function App() {
     <div>
       <Header />
 
-      <div className={styles.wrapper}>
-        <Form />
+      <div className={styles.pageWrapper}>
+        <div className={styles.limits}>
+          <Form />
 
-        <main>
-          <Tasks />
-        </main>
+          <main>
+            <Tasks />
+          </main>
+        </div>
       </div>
     </div>
   )

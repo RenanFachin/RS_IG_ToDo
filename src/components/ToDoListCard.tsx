@@ -1,8 +1,8 @@
 import { Trash, Check } from 'phosphor-react'
 
-import styles from './ToDoList.module.css'
+import styles from './ToDoListCard.module.css'
 
-export function ToDoList() {
+export function ToDoListCard() {
   const isFinished = true
 
 
