@@ -1,8 +1,9 @@
 import { Header } from '../components/Header'
 import { Form } from '../components/Form'
 
-import styles from './App.module.css'
 import { Tasks } from '../components/Tasks'
+
+import styles from './App.module.css'
 
 export function App() {
   return (
