@@ -1,12 +1,29 @@
-import { ClipboardText } from 'phosphor-react'
-
-import styles from './Tasks.module.css'
+// COMPONENTS
 import { ToDoListCard } from './ToDoListCard'
 
-export function Tasks() {
+// ICONS
+import { ClipboardText } from 'phosphor-react'
+
+import { TaskProps } from './Form'
+
+// CSS
+import styles from './Tasks.module.css'
+
+interface Props {
+  tasks: TaskProps[];
+  onSelect: (taskId: number) => void;
+}
+
+
+export function Tasks({ tasks, onSelect }: Props) {
+  
+  function onSelectTaskProps(taskId: number) {
+    onSelect(taskId);
+  }
+
   return (
     <div className={styles.page_wrapper}>
-      
+
       <section className={styles.content}>
         <div className={styles.summary}>
           <strong>Tarefas criadas</strong>
@@ -21,26 +38,42 @@ export function Tasks() {
 
 
       <section className={styles.tasks}>
-        {/* <div className={styles.placeholder}>
-          <ClipboardText size={56}/>
 
-          <strong>Você ainda não tem tarefas cadastradas</strong>
-          <p>Crie tarefas e organize seus itens a fazer</p>
+        {
+          tasks.length === 0 ?
+            (
+              <div className={styles.placeholder}>
+                <ClipboardText size={56} />
+
+                <strong>Você ainda não tem tarefas cadastradas</strong>
+                <p>Crie tarefas e organize seus itens a fazer</p>
 
 
-        </div> */}
+              </div>
+            )
+            :
+            (
+              <div className={styles.toDoList}>
 
-        <div className={styles.toDoList}>
-          <ToDoListCard />
-          <ToDoListCard />
-          <ToDoListCard />
-          <ToDoListCard />
-          <ToDoListCard />
-          <ToDoListCard />
-          <ToDoListCard />
-          <ToDoListCard />
-          <ToDoListCard />
-        </div>
+                {
+                  tasks.map(task => {
+                    return (
+                      <ToDoListCard
+                        key={task.id}
+                        taskId={task.id}
+                        content={task.content}
+                        isFinished={task.isCompleted}
+                        onSelect={onSelectTaskProps}
+                      />
+                    )
+                  })
+                }
+
+              </div>
+            )
+        }
+
+
 
       </section>
     </div>

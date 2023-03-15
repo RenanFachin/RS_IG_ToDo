@@ -1,4 +1,7 @@
 .card {
+  width: 100%;
+  min-height: 4.5rem;
+
   display: flex;
   align-items: flex-start;
   padding: 1rem;
@@ -10,6 +13,10 @@
   border-radius: 8px;
 
   font-size: 0.875rem;  
+}
+
+.card p {
+  flex: 1;
 }
 
 .card .taskCompleted,

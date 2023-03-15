@@ -1,20 +1,35 @@
+// ICONS
 import { Trash, Check } from 'phosphor-react'
+import { useState } from 'react'
 
+// CSS
 import styles from './ToDoListCard.module.css'
 
-export function ToDoListCard() {
-  const isFinished = true
+interface toDoListCardProps {
+  content: string;
+  taskId: number;
+  isFinished: boolean;
+  onSelect: (taskId: number) => void;
+}
 
+export function ToDoListCard({ content, isFinished, onSelect, taskId }: toDoListCardProps) {
+  
+  function handleToggleTask() {
+    onSelect(taskId)
+  }
 
   return (
     <div className={styles.card}>
 
-      <button className={isFinished ? styles.taskCompleted : styles.notFinished}>
+      <button
+        className={isFinished ? styles.taskCompleted : styles.notFinished}
+        onClick={handleToggleTask}
+      >
         {isFinished ? <Check size={16} /> : null}
       </button>
 
       <p className={isFinished ? styles.taskTextCompleted : styles.taskText}>
-        Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.
+        {content}
       </p>
 
       <button className={styles.deleteItem}>
